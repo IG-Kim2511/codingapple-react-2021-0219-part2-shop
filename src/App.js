@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 
 {/* 19 */}
-import {Link, Route,Switch} from 'react-router-dom';
+import {Route, Link, Switch} from 'react-router-dom';
 
 
 import data from './data'
@@ -26,8 +26,9 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/"> Home</Nav.Link>
-              <Nav.Link href="/detail"> detail</Nav.Link>
+            {/* 19 */}
+              <Nav.Link > <Link to='/'>Home</Link> </Nav.Link>
+              <Nav.Link>  <Link to='/detail'>detail</Link> </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -48,28 +49,35 @@ function App() {
        {/* 19 */}
        <div>
 
-        <Route exact path='/'>       
-              <div>
-              <div className="container">
+       <Switch>
 
-                <div className="row">     
-                {/* 18 */}   
-                  {
-                      shoes.map( function(a,i){
-                          return(  
-                            <Card shoes={a} i={i}></Card>
-                        )
-                      }
-                    )
-                  }
-              </div>
-              </div>
-            </div>
-        </Route>
+          <Route exact path='/'>       
+                <div>
+                <div className="container">
 
-        <Route path="/detail">
-                <Detail/>
-        </Route>
+                  <div className="row">     
+                  {/* 18 */}   
+                    {
+                        shoes.map( function(a,i){
+                            return(  
+                              <Card shoes={a} i={i}></Card>
+                          )
+                        }
+                      )
+                    }
+                </div>
+                </div>
+              </div>
+          </Route>
+
+          <Route path="/detail">
+                  <Detail/>
+          </Route>
+          <Route path="/:id">
+                  <div> path="/:id"</div>
+          </Route>
+
+        </Switch>
         
        </div>
 
