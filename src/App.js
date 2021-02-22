@@ -1,16 +1,12 @@
 /* eslint-disable */
-{/* 18 */}
 
-import React ,{useState} from 'react';
+import React ,{useState} from 'react';  {/* 18 */}
 import './App.css';
 
+{/* library */}
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
-
-{/* 19 */}
-import {Route, Link, Switch} from 'react-router-dom';
-import styled from 'styled-components'
-
+import {Route, Link, Switch} from 'react-router-dom'; {/* 19 */}
 
 {/* components */}
 import data from './data'
