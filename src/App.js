@@ -5,6 +5,8 @@ import React ,{useState} from 'react';  {/* 18 */}
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 import {Route, Link, Switch} from 'react-router-dom'; {/* 19 */}
+import axios from 'axios'
+
 
 {/* components */}
 import './css/App.css';
@@ -15,6 +17,7 @@ import  Detail  from "./components/Detail";
 function App() {
 
   const [shoes, setshoes] = useState(data);
+
   return (
     <div className="App">    
     <p className="black-nav">react </p>
@@ -48,7 +51,6 @@ function App() {
        {/* 19 */}
        <div>
         <Switch>
-
           <Route exact path='/'>       
                 <div>
                 <div className="container">
@@ -67,10 +69,8 @@ function App() {
                 </div>
               </div>
           </Route>
-
           
-          {/*  20 */}
-          {/*  21 */}
+          {/*  20 */}     {/*  21 */}           
           <Route path="/detail/:id">
                   <Detail shoes={shoes}/>
           </Route>
@@ -78,8 +78,21 @@ function App() {
           <Route path="/:id">
                   <div> path="/:id"</div>
           </Route>
+        </Switch>      
+       </div>
 
-        </Switch>        
+       <div>
+          {/* ajax */}
+          <button className="btn btn-primary" onClick={()=>{ 
+            axios.get('https://codingapple1.github.io/shop/data2.json')
+            .then((a)=>{
+              console.log(a.data)
+              setshoes([...shoes,...a.data]);
+            }).catch(()=>{ 
+              console.log('fail')
+            })
+          }}>more</button>
+       
        </div>
 
 {/*  */}
@@ -93,8 +106,12 @@ function Card (p){
   <img src={"https://codingapple1.github.io/shop/shoes"+(p.i+1)+".jpg"} width="100%" />
   <h4>{ p.shoes.title }</h4>
   <p>{ p.shoes.content } & { p.shoes.price }</p>
-</div>
 
+
+
+
+
+</div>
   )
 }
 
