@@ -12,7 +12,7 @@
       id : 1,
       title : "1-Red Knit",
       content : "1-Born in Seoul",
-      price : 1-110000
+      price : 110000
     },
   
     {

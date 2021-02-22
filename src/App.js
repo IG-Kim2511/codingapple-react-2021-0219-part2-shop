@@ -14,6 +14,7 @@ import {Route, Link, Switch} from 'react-router-dom';
 import data from './data'
 import  Detail  from "./Detail";
 
+
 function App() {
 
   const [shoes, setshoes] = useState(data);
@@ -21,14 +22,16 @@ function App() {
     <div className="App">    
     <p className="black-nav">react </p>
       <div>
-        <Navbar bg="light" expand="lg">
+          <Navbar bg="light" expand="lg">
           <Navbar.Brand href="#home">ShoeShop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
             {/* 19 */}
               <Nav.Link > <Link to='/'>Home</Link> </Nav.Link>
-              <Nav.Link>  <Link to='/detail'>detail</Link> </Nav.Link>
+              <Nav.Link>  <Link to='/detail/0'>detail0</Link> </Nav.Link>
+              <Nav.Link>  <Link to='/detail/1'>detail1</Link> </Nav.Link>
+              <Nav.Link>  <Link to='/detail/2'>detail2</Link> </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -42,14 +45,12 @@ function App() {
               <Button variant="outline-success">Search</Button>
             </Form>
           </Navbar.Collapse>
-         </Navbar>    
+        </Navbar>   
       </div>
-
 
        {/* 19 */}
        <div>
-
-       <Switch>
+        <Switch>
 
           <Route exact path='/'>       
                 <div>
@@ -70,20 +71,19 @@ function App() {
               </div>
           </Route>
 
-          <Route path="/detail">
-                  <Detail/>
+          
+          {/*  20 */}
+          {/*  21 */}
+          <Route path="/detail/:id">
+                  <Detail shoes={shoes}/>
           </Route>
+      
           <Route path="/:id">
                   <div> path="/:id"</div>
           </Route>
 
-        </Switch>
-        
+        </Switch>        
        </div>
-
-
-
-
 
 {/*  */}
     </div>
