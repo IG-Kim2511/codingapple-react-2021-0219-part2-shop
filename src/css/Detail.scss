@@ -1,7 +1,46 @@
+@import "./reset.scss";
 
-// #maincolor: #00ca5c;
-// #maincolor: rgb(0,202,92);
+$maincolor: #004c92;
+$maincolor2: rgb(0, 202, 92);
 
-.lightcoral{
-    background-color: lightcoral;
+.lightcoral {
+  background-color: $maincolor;
+}
+
+div.container {
+  h4 {
+    color: $maincolor2;
+  }
+  p {
+    color: $maincolor;
+  }
+}
+
+.ig {
+  background: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.my-alert2 {
+  @extend .ig;
+  background-color: lightpink;
+}
+
+@mixin igkim() {
+  background: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+.my-alert3 {
+  @include igkim();
 }
