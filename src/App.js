@@ -13,14 +13,20 @@ import './css/App.css';
 import data from './components/data'
 import  Detail  from "./components/Detail";
 
+// <button onclick={()=>{  console.log( ) }}>test</button>
+
 
 function App() {
 
   const [shoes, setshoes] = useState(data);
 
+  {/* 25 재고 */}
+  const [inventory, setInventory] = useState([10,11,12])
+
   return (
     <div className="App">    
     <p className="black-nav">react </p>
+    
        <nav>
           <Navbar bg="light" expand="lg">
           <Navbar.Brand href="#home">ShoeShop</Navbar.Brand>
@@ -72,7 +78,7 @@ function App() {
           
           {/*  20 */}     {/*  21 */}           
           <Route path="/detail/:id">
-                  <Detail shoes={shoes}/>
+                  <Detail shoes={shoes} inventory={inventory}/>
           </Route>
       
           <Route path="/:id">
@@ -84,9 +90,6 @@ function App() {
        {/* ajax */}
        <div>
           <button className="btn btn-primary" onClick={()=>{ 
-
-
-            axios.post('url',{id:1, data:"sdf"});
 
             axios.get('https://codingapple1.github.io/shop/data2.json')
             .then((a)=>{

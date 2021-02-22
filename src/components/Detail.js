@@ -5,18 +5,16 @@ import "../css/Detail.scss";
 
 function Detail(p){
 
+        {/*  24  
+        🚀UI만들기
 
+        1. UI 보이고/안보이고 상태... state로 저장
 
-{/*  24  
-🚀UI만들기
+        2. if문으로 state가 true일때 보여줌
 
-1. UI 보이고/안보이고 상태... state로 저장
+        3. setState값 변경하는 함수 설정 (ex.  button ,  setTimeout)
 
-2. if문으로 state가 true일때 보여줌
-
-3. setState값 변경하는 함수 설정 (ex.  button ,  setTimeout)
-
-*/}
+        */}
 
     {/*  24 -1 */}
     const [alert, setAlert] = useState(true);
@@ -25,14 +23,13 @@ function Detail(p){
     {/*  24-3 */}
     useEffect(() => {
       let timeout = setTimeout(() => {
-          setAlert(false)
-          
+          setAlert(false)          
       }, 2000);
     }, [])
-
     
     var history = useHistory();
-    let {id} = useParams();
+
+    let {id} = useParams();         {/*  19 */}
     
     {/* 21 connect address with id in Data.js
     , find() */}
@@ -40,11 +37,8 @@ function Detail(p){
         return a.id ==id
     })
     
-
-
     return(
-        <div className="container">
-        
+        <div className="container">        
             <div>
                 {/*  24-2*/}
                 {
@@ -59,26 +53,37 @@ function Detail(p){
 
                 {/*  24-3  */}
                 <button onClick={()=>{ setAlert(true) }}>show</button>
-                <button onClick={()=>{ setAlert(false) }}>hide</button>
-    
-            </div>
-        
+                <button onClick={()=>{ setAlert(false) }}>hide</button>    
+            </div>        
             
             <div className="row ">
                 <div className="col-md-6">
-                    <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+                    <img src={"https://codingapple1.github.io/shop/shoes"+(id)+".jpg"} width="100%" />
                 </div>
                 <div className="col-md-6 mt-4 ">
                     <h4 className="pt-5 lightcoral">{findItem.title}</h4>        {/*  20, 21 */}
                     <p>{findItem.content}</p>
                     <p>{findItem.price}$</p>
-                    <button className="btn btn-danger">order</button> 
+
+                    <Info inventory={p.inventory} id={id}/>        {/*  19 */}
+
+                    <button className="btn btn-danger" onClick={()=>{
+                       
+                    }}>order</button> 
                     <button className="btn btn-danger" onclick={()=>{
                         history.goBack()
                     }}>back</button> 
                 </div>
             </div>
+
          </div> 
+    )
+}
+
+
+function Info(p){
+    return(
+        <p> inventory : {p.inventory[p.id]} </p>
     )
 }
 
