@@ -1,14 +1,13 @@
 /* eslint-disable */
 
-import React ,{useState} from 'react';  {/* 18 */}
-import './css/App.css';
-
 {/* library */}
+import React ,{useState} from 'react';  {/* 18 */}
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from 'react-bootstrap';
 import {Route, Link, Switch} from 'react-router-dom'; {/* 19 */}
 
 {/* components */}
+import './css/App.css';
 import data from './components/data'
 import  Detail  from "./components/Detail";
 
@@ -26,10 +25,10 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
             {/* 19 */}
-              <Nav.Link > <Link to='/'>Home</Link> </Nav.Link>
-              <Nav.Link>  <Link to='/detail/0'>detail0</Link> </Nav.Link>
-              <Nav.Link>  <Link to='/detail/1'>detail1</Link> </Nav.Link>
-              <Nav.Link>  <Link to='/detail/2'>detail2</Link> </Nav.Link>
+              <Nav.Link as={Link} to="/" > <Link to='/'>Home</Link> </Nav.Link>
+              <Nav.Link as={Link} to="/detail/0" > detail0 </Nav.Link>
+              <Nav.Link as={Link} to="/detail/1" > detail1 </Nav.Link>
+              <Nav.Link as={Link} to="/detail/2" >  detail2 </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
