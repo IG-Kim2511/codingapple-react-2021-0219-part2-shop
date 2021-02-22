@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">    
     <p className="black-nav">react </p>
-      <div>
+       <nav>
           <Navbar bg="light" expand="lg">
           <Navbar.Brand href="#home">ShoeShop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -46,7 +46,7 @@ function App() {
             </Form>
           </Navbar.Collapse>
         </Navbar>   
-      </div>
+      </nav>
 
        {/* 19 */}
        <div>
@@ -81,9 +81,13 @@ function App() {
         </Switch>      
        </div>
 
+       {/* ajax */}
        <div>
-          {/* ajax */}
           <button className="btn btn-primary" onClick={()=>{ 
+
+
+            axios.post('url',{id:1, data:"sdf"});
+
             axios.get('https://codingapple1.github.io/shop/data2.json')
             .then((a)=>{
               console.log(a.data)
