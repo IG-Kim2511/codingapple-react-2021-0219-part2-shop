@@ -9,8 +9,10 @@ import { Navbar , Nav ,NavDropdown , Form , FormControl, Button, Jumbotron} from
 
 {/* 19 */}
 import {Route, Link, Switch} from 'react-router-dom';
+import styled from 'styled-components'
 
 
+{/* components */}
 import data from './data'
 import  Detail  from "./Detail";
 
