@@ -16,16 +16,15 @@ const Cart = (p) => {
                   
                 </tr>
                 </thead>
-                <tbody>
-            
+                <tbody>            
                     {
                         p.store.map((a,i)=>{
                             return(
                                 <tr>
-                                    <td>1</td>
-                                    <td>{p.store[0].id} </td>
-                                    <td>{p.store[0].name} </td>
-                                    <td>{p.store[0].quan} </td>
+                                    <td>{a.id+1}</td>
+                                    <td>{a.id} </td>
+                                    <td>{a.name} </td>
+                                    <td>{a.quan} </td>
                                 </tr>
                             )
                         })

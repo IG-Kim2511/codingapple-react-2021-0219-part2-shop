@@ -27,7 +27,14 @@ function App() {
 
   {/* 32 */}
 
-  const [store, setstore] = useState([{id : 0, name : 'cool shoes', quan: 2}]);
+  const [store, setstore] = useState(
+    [
+      {id : 0, name : 'cool shoes', quan: 2},
+      {id : 1, name : 'cool shoes', quan: 2},
+      {id : 2, name : 'cool shoes', quan: 2},
+      {id : 3, name : 'cool shoes', quan: 2} 
+     ] 
+    );
 
   return (
     <div className="App">    
