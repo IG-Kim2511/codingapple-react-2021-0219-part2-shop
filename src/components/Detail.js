@@ -30,7 +30,7 @@ function Detail(p){
     var history = useHistory();
 
     let {id} = useParams();         {/*  19 */}
-    
+
     {/* 21 connect address with id in Data.js
     , find() */}
     let findItem = p.shoes.find(function(a){
@@ -57,8 +57,9 @@ function Detail(p){
             </div>        
             
             <div className="row ">
-                <div className="col-md-6">
-                    <img src={"https://codingapple1.github.io/shop/shoes"+(id)+".jpg"} width="100%" />
+                <div className="col-md-6">         
+         
+                    <img src={"https://codingapple1.github.io/shop/shoes"+id+".jpg"} width="100%" />
                 </div>
                 <div className="col-md-6 mt-4 ">
                     <h4 className="pt-5 lightcoral">{findItem.title}</h4>        {/*  20, 21 */}

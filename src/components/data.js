@@ -1,6 +1,6 @@
   import React from 'react'
   
-  const data =   [
+  const data = [
     {
       id : 0,
       title : "0-White and Black",

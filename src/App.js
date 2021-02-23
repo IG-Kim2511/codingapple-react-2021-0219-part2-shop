@@ -38,18 +38,7 @@ function App() {
               <Nav.Link as={Link} to="/detail/0" > detail0 </Nav.Link>
               <Nav.Link as={Link} to="/detail/1" > detail1 </Nav.Link>
               <Nav.Link as={Link} to="/detail/2" >  detail2 </Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
             </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-success">Search</Button>
-            </Form>
           </Navbar.Collapse>
         </Navbar>   
       </nav>
@@ -98,8 +87,7 @@ function App() {
             }).catch(()=>{ 
               console.log('fail')
             })
-          }}>more</button>
-       
+          }}>more</button>       
        </div>
 
 {/*  */}
@@ -109,16 +97,12 @@ function App() {
 
 {/* 18 */}
 function Card (p){
-  return(<div className="col-md-4">
-  <img src={"https://codingapple1.github.io/shop/shoes"+(p.i+1)+".jpg"} width="100%" />
-  <h4>{ p.shoes.title }</h4>
-  <p>{ p.shoes.content } & { p.shoes.price }</p>
-
-
-
-
-
-</div>
+  return(
+    <div className="col-md-4">
+      <img src={"https://codingapple1.github.io/shop/shoes"+(p.i+1)+".jpg"} width="100%" />
+      <h4>{ p.shoes.title }</h4>
+      <p>{ p.shoes.content } & { p.shoes.price }</p>
+    </div>
   )
 }
 
