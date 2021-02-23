@@ -3,7 +3,7 @@ import React from 'react'
 import {Table} from 'react-bootstrap'
 
 
-const Cart = () => {
+const Cart = (p) => {
     return (
         <div>
            <Table responsive="md">
@@ -17,21 +17,20 @@ const Cart = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Table </td>
-                    <td>Table </td>
-                    <td>Table </td>
             
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Table </td>
-                    <td>Table </td>
-                    <td>Table </td>
-                
-                </tr>
-         
+                    {
+                        p.store.map((a,i)=>{
+                            return(
+                                <tr>
+                                    <td>1</td>
+                                    <td>{p.store[0].id} </td>
+                                    <td>{p.store[0].name} </td>
+                                    <td>{p.store[0].quan} </td>
+                                </tr>
+                            )
+                        })
+                    }
+              
                 </tbody>
             </Table>
         </div>

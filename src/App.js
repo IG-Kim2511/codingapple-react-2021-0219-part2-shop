@@ -13,6 +13,7 @@ import './css/App.css';
 import data from './components/data'
 import  Detail  from "./components/Detail";
 import  Cart  from "./components/Cart";
+import { ReactReduxContext } from 'react-redux';
 
 // <button onclick={()=>{  console.log( ) }}>test</button>
 
@@ -23,6 +24,10 @@ function App() {
 
   {/* 25 재고 */}
   const [inventory, setInventory] = useState([10,11,12])
+
+  {/* 32 */}
+
+  const [store, setstore] = useState([{id : 0, name : 'cool shoes', quan: 2}]);
 
   return (
     <div className="App">    
@@ -87,7 +92,7 @@ function App() {
           </Route>
   
           <Route path="/cart">
-                  <Cart></Cart>
+                  <Cart store={store} setstore={setstore}></Cart>
           </Route>
         </Switch>      
        </div>
