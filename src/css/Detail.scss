@@ -44,3 +44,12 @@ div.container {
 .my-alert3 {
   @include igkim();
 }
+
+// 31
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}

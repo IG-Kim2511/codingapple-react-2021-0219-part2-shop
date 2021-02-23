@@ -1,7 +1,11 @@
 import React,  {useState, useEffect} from 'react';
+import { TabContent } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import "../css/Detail.scss";
+
+import ReactCSSTransitionGroup from 'react-transition-group'; // ES6
+
 
 function Detail(p){
 
@@ -18,6 +22,10 @@ function Detail(p){
 
     {/*  24 -1 */}
     const [alert, setAlert] = useState(true);
+
+    const [tab, settab] = useState(0);
+
+    // const [transition, settransition] = useState(transition);
 
 
     {/*  24-3 */}
@@ -77,8 +85,35 @@ function Detail(p){
                 </div>
             </div>
 
+            <div>
+                    <button onClick={()=>{ settab(0) }}> show 0</button>
+                    <button onClick={()=>{ settab(1) }}> show 1</button>
+                    <button onClick={()=>{ settab(2) }}> show 2</button>
+            </div>
+
+
+            
+          <Tabcontent   tab={tab} />
+
          </div> 
     )
+}
+
+function Tabcontent(p) {
+useEffect(() => {        
+       
+}, [])
+
+    if (p.tab=== 0) {
+        return(
+            <div> 0 datas </div> )
+    } else if(p.tab=== 1){
+        return(
+         <div> 1 datas </div>)
+    }else {
+        return(
+        <div> 2 datas </div>)
+   }
 }
 
 
