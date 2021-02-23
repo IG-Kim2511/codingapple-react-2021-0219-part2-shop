@@ -63,6 +63,20 @@ function App() {
                 </div>
                 </div>
               </div>
+
+              {/* ajax */}
+                <div>
+                  <button className="btn btn-primary" onClick={()=>{ 
+
+                    axios.get('https://codingapple1.github.io/shop/data2.json')
+                    .then((a)=>{
+                      console.log(a.data)
+                      setshoes([...shoes,...a.data]);
+                    }).catch(()=>{ 
+                      console.log('fail')
+                    })
+                  }}>more</button>       
+                </div>
           </Route>
           
           {/*  20 */}     {/*  21 */}           
@@ -76,19 +90,7 @@ function App() {
         </Switch>      
        </div>
 
-       {/* ajax */}
-       <div>
-          <button className="btn btn-primary" onClick={()=>{ 
-
-            axios.get('https://codingapple1.github.io/shop/data2.json')
-            .then((a)=>{
-              console.log(a.data)
-              setshoes([...shoes,...a.data]);
-            }).catch(()=>{ 
-              console.log('fail')
-            })
-          }}>more</button>       
-       </div>
+      
 
 {/*  */}
     </div>
