@@ -12,6 +12,7 @@ import axios from 'axios'
 import './css/App.css';
 import data from './components/data'
 import  Detail  from "./components/Detail";
+import  Cart  from "./components/Cart";
 
 // <button onclick={()=>{  console.log( ) }}>test</button>
 
@@ -35,6 +36,7 @@ function App() {
             <Nav className="mr-auto">
             {/* 19 */}
               <Nav.Link as={Link} to="/" > <Link to='/'>Home</Link> </Nav.Link>
+              <Nav.Link as={Link} to="/cart" > <Link to='/cart'>Cart</Link> </Nav.Link>
               <Nav.Link as={Link} to="/detail/0" > detail0 </Nav.Link>
               <Nav.Link as={Link} to="/detail/1" > detail1 </Nav.Link>
               <Nav.Link as={Link} to="/detail/2" >  detail2 </Nav.Link>
@@ -83,9 +85,9 @@ function App() {
           <Route path="/detail/:id">
                   <Detail shoes={shoes} inventory={inventory}/>
           </Route>
-      
-          <Route path="/:id">
-                  <div> path="/:id"</div>
+  
+          <Route path="/cart">
+                  <Cart></Cart>
           </Route>
         </Switch>      
        </div>

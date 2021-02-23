@@ -46,10 +46,10 @@ div.container {
 }
 
 // 31
-.my-node-enter {
+.wow-enter {
   opacity: 0;
 }
-.my-node-enter-active {
+.wow-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity 500ms;
 }

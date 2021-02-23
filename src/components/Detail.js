@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import "../css/Detail.scss";
 
-import ReactCSSTransitionGroup from 'react-transition-group'; // ES6
+import {CSSTransition} from 'react-transition-group'; // ES6
 
 
 function Detail(p){
@@ -25,7 +25,7 @@ function Detail(p){
 
     const [tab, settab] = useState(0);
 
-    // const [transition, settransition] = useState(transition);
+    const [turn, setturn] = useState(false);
 
 
     {/*  24-3 */}
@@ -86,22 +86,23 @@ function Detail(p){
             </div>
 
             <div>
-                    <button onClick={()=>{ settab(0) }}> show 0</button>
-                    <button onClick={()=>{ settab(1) }}> show 1</button>
-                    <button onClick={()=>{ settab(2) }}> show 2</button>
+                    <button onClick={()=>{ setturn(false); settab(0); }}> show 0</button>
+                    <button onClick={()=>{ setturn(false); settab(1);  }}> show 1</button>
+                    <button onClick={()=>{setturn(false); settab(2);  }}> show 2</button>
             </div>
 
 
+            <CSSTransition in={turn} className='wow' timeout={500}>
             
-          <Tabcontent   tab={tab} />
-
+                <Tabcontent   tab={tab}   setturn={setturn}/>
+          </CSSTransition>
          </div> 
     )
 }
 
 function Tabcontent(p) {
 useEffect(() => {        
-       
+       p.setturn(true);
 }, [])
 
     if (p.tab=== 0) {
