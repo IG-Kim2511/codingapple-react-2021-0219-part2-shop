@@ -39,5 +39,3 @@ const Cart = (p) => {
 
 export default Cart
 
-rx
-
