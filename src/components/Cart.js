@@ -17,14 +17,15 @@ const Cart = (p) => {
                 </tr>
                 </thead>
                 <tbody>            
+                {/* 33 */}
                     {
                         p.store.map((a,i)=>{
                             return(
                                 <tr>
-                                    <td>{a.id+1}</td>
                                     <td>{a.id} </td>
                                     <td>{a.name} </td>
                                     <td>{a.quan} </td>
+                                    <td><button className="myButton" onClick={()=>{p.dispatch({type:'plus'})}}>+</button> </td>
                                 </tr>
                             )
                         })
@@ -38,4 +39,5 @@ const Cart = (p) => {
 
 export default Cart
 
+rx
 

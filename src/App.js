@@ -25,7 +25,7 @@ function App() {
   {/* 25 재고 */}
   const [inventory, setInventory] = useState([10,11,12])
 
-  {/* 32 */}
+  {/* 33 Cart.js*/}
 
   const [store, setstore] = useState(
     [
@@ -35,6 +35,17 @@ function App() {
       {id : 3, name : 'cool shoes', quan: 2} 
      ] 
     );
+
+   const reducercopy = (state=store,action)=> {
+     if (action.type ==='plus') {
+       let copy = [...state];
+       copy[0].quan++;
+       return copy       
+     } else {
+       return state;
+     }
+      
+    }
 
   return (
     <div className="App">    
