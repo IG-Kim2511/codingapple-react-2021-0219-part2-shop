@@ -12,7 +12,7 @@ import {Provider} from 'react-redux';
 import { createStore } from 'redux';  
 
 let store = createStore(()=>{
-  return[{id : 0, name : 'cool shoes', quan: 2}]
+  return[{id : 0, name : 'cool shoes', quan: 12}]
 });
 
 ReactDOM.render(

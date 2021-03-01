@@ -22,7 +22,7 @@ function App() {
 
   const [shoes, setshoes] = useState(data);
 
-  {/* 25 재고 */}
+  {/* 25   */}
   const [inventory, setInventory] = useState([10,11,12])
 
   {/* 33 Cart.js*/}
